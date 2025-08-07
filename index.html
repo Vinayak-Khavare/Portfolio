@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">Vinayak Khavare</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Hi, I'm <span class="highlight">Vinayak Khavare</span>!
+                </h1>
+                <p class="hero-subtitle">AI/ML Developer & Creative Problem Solver</p>
+                <p class="hero-description">
+                    I build beautiful, functional, and user-centered digital experiences. 
+                    Passionate about clean code and innovative solutions. Love working on interesting 
+                    projects that challenge my skills and creativity.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    <a href="sources/Vinayak_Khavare.pdf" download="Vinayak_Khavare.pdf" class="btn btn-tertiary"><i class="fas fa-download"></i> Download CV </a>
+                </div>
+                <div class="hero-social">
+                    <a href="https://github.com/vinayak-khavare" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/vinayak-khavare-542821257" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:vinayakkhavare62@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img 
+                    src="sources/profile.jpg" 
+                    alt="Vinayak khavare" 
+                    class="profile-image"
+                >
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Hi, I’m Vinayak Khavare, an aspiring AI Engineer and full-stack developer with a deep 
+                        interest in building agentic AI systems, RAG pipelines, and LLM-powered real-world applications. 
+                        I enjoy solving meaningful problems by combining cutting-edge AI models with practical product thinking.
+                    </p>
+                    <!-- <p>
+                        Currently in my final year of engineering, I’ve worked on a range of projects—from building a PDF-based 
+                        quiz generation tool using Ollama & ChromaDB, to designing AI agents for legal and financial workflows 
+                        during Microsoft and Perplexity hackathons. My focus is always on making AI not just intelligent, but 
+                        useful, grounded, and accessible.
+                    </p> -->
+                    <p>
+                        Outside tech, I’m passionate about fitness, cooking, and competitive sports. Whether I’m working on code 
+                        or calisthenics, I love pushing boundaries, learning deeply, and staying consistent.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>1+</h3>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat">
+                            <h3>10+</h3>
+                            <p>Projects Completed</p>
+                        </div>
+                        <div class="stat">
+                            <h3>3+</h3>
+                            <p>Happy Clients</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="about-placeholder">
+                        <i class="fas fa-code"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">LAWGIC AI – Indian Legal Law Agent</h3>
+                        <p class="project-description">
+                            Lawgic AI is an AI-powered legal assistant that answers Indian law-related queries using 
+                            Retrieval-Augmented Generation (RAG) with Semantic Kernel and Azure AI services. It supports 
+                            multilingual queries, voice interaction, and citation-backed responses, making legal 
+                            information more accessible and conversational.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">LLM</span>
+                            <span class="tech-tag">RAG</span>
+                            <span class="tech-tag">Azure AI</span>
+                            <span class="tech-tag">Semantic Kernel</span>
+                            <span class="tech-tag">Chainlit</span>
+                            <span class="tech-tag">Multilingual</span>
+                            <span class="tech-tag">Legal Tech</span>
+                            <span class="tech-tag">Microsoft Hackathon</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Vinayak-Khavare/LAWGIC-AI-Indian-Legal-Law-Agent" class="project-link" target="_blank">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="#" class="project-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Live
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Finny – The Finance Buddy</h3>
+                        <p class="project-description">
+                            Finny – The Finance Buddy is a Discord-based AI bot that gamifies personal finance for Gen Z users 
+                            through daily challenges, savings goal tracking, and AI-powered financial advice using the Perplexity 
+                            API. It combines engaging gameplay with persistent data tracking to build smart money habits in a fun,
+                            social way.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Discord Bot</span>
+                            <span class="tech-tag">Perplexity API</span>
+                            <span class="tech-tag">SQLite</span>
+                            <span class="tech-tag">Gamified Finance</span>
+                            <span class="tech-tag">AI Chatbot</span>
+                            <span class="tech-tag">Hackathon Project</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Vinayak-Khavare/Finny-The-finance-buddy" class="project-link" target="_blank">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="#" class="project-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Live
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">AptAI – Intelligent Quiz Generator from PDFs</h3>
+                        <p class="project-description">
+                            AptAI is an AI-powered quiz generator that parses large PDFs, stores semantic vectors in ChromaDB, 
+                            and uses the Ollama Mistral 7B model to generate contextually relevant quizzes based on user queries. 
+                            It features a dynamic frontend built with HTML, CSS, and JavaScript for interactive test-taking.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Ollama</span>
+                            <span class="tech-tag">Mistral 7B</span>
+                            <span class="tech-tag">ChromaDB</span>
+                            <span class="tech-tag">RAG</span>
+                            <span class="tech-tag">PDF Parsing</span>
+                            <span class="tech-tag">HTML/CSS/JS</span>
+                            <span class="tech-tag">AI Quiz Generator</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Vinayak-Khavare/APT-AI" class="project-link" target="_blank">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="#" class="project-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Live
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="category-title">Frontend</h3>
+                    <div class="skill-items">
+                        <div class="skill-item"><span>HTML</span></div>
+                        <div class="skill-item"><span>CSS</span></div>
+                        <div class="skill-item"><span>JavaScript</span></div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">Backend</h3>
+                    <div class="skill-items">
+                        <div class="skill-item"><span>Python</span></div>
+                        <div class="skill-item"><span>FastAPI</span></div>
+                        <div class="skill-item"><span>MongoDB</span></div>
+                        <div class="skill-item"><span>SQL</span></div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">AI & Machine Learning</h3>
+                    <div class="skill-items">
+                        <div class="skill-item"><span>Scikit-learn</span></div>
+                        <div class="skill-item"><span>TensorFlow</span></div>
+                        <div class="skill-item"><span>Pandas</span></div>
+                        <div class="skill-item"><span>spaCy</span></div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">LLM & AI Agents</h3>
+                    <div class="skill-items">
+                        <div class="skill-item"><span>Ollama</span></div>
+                        <div class="skill-item"><span>LangChain</span></div>
+                        <div class="skill-item"><span>Semantic Kernel</span></div>
+                        <div class="skill-item"><span>Chainlit</span></div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">Cloud & Tools</h3>
+                    <div class="skill-items">
+                        <div class="skill-item"><span>Azure</span></div>
+                        <div class="skill-item"><span>Git</span></div>
+                        <div class="skill-item"><span>Openpyxl</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's work together!</h3>
+                    <p>
+                        I'm always interested in new opportunities and exciting projects. 
+                        Whether you have a question or just want to say hi, feel free to reach out!
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>vinayakkhavare62@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Pune, Maharashtra</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+91 7066606339</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/vinayak-khavare" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/vinayak-khavare-542821257" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <!-- <a href="https://twitter.com/yourusername" target="_blank" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a> -->
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Vinayak Khavare. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
