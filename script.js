@@ -27,17 +27,37 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar background change on scroll
+let lastScrollTop = 0;
+const navbar = document.querySelector('.navbar');
+
 window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(15, 23, 42, 0.98)';
+    let currentScroll = window.scrollY || document.documentElement.scrollTop;
+
+    // Background & shadow change
+    if (currentScroll > 100) {
+        navbar.style.background = window.innerWidth <= 768 
+            ? 'rgba(255, 255, 255, 0.95)' // light background for mobile
+            : 'rgba(15, 23, 42, 0.98)';   // dark background for desktop
         navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
     } else {
-        navbar.style.background = 'rgba(15, 23, 42, 0.95)';
+        navbar.style.background = window.innerWidth <= 768
+            ? 'rgba(255, 255, 255, 1)'
+            : 'rgba(15, 23, 42, 0.95)';
         navbar.style.boxShadow = 'none';
     }
+
+    // Hide/show navbar based on scroll direction
+    if (currentScroll > lastScrollTop && currentScroll > 80) {
+        // Scrolling down → hide
+        navbar.style.transform = 'translateY(-100%)';
+    } else {
+        // Scrolling up → show
+        navbar.style.transform = 'translateY(0)';
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
 });
+
 
 // Intersection Observer for animations
 const observerOptions = {
