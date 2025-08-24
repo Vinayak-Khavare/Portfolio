@@ -15,12 +15,14 @@ A modern, responsive portfolio website built with HTML, CSS, and JavaScript. Fea
 ## 📁 File Structure
 
 ```
-portfolio-website/
-├── sources/          	# Resources
-├── index.html          # Main HTML file
-├── styles.css          # CSS styles and responsive design
-├── script.js           # JavaScript functionality
-└── README.md          	# This file
+Portfolio/
+├── sources/
+├── index.html        # Main portfolio page
+├── styles.css        # Styling
+├── script.js         # Frontend logic & form handling
+│
+└── api/
+    └── send-email.js # Vercel serverless function (handles email securely)
 ```
 
 ## 🛠️ Setup Instructions

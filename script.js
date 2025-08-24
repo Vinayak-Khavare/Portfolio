@@ -79,41 +79,117 @@ document.addEventListener('DOMContentLoaded', () => {
     animatedElements.forEach(el => observer.observe(el));
 });
 
-// Contact form handling
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(this);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const subject = formData.get('subject');
-        const message = formData.get('message');
-        
-        // Basic validation
-        if (!name || !email || !subject || !message) {
-            showNotification('Please fill in all fields.', 'error');
-            return;
-        }
-        
-        if (!isValidEmail(email)) {
-            showNotification('Please enter a valid email address.', 'error');
-            return;
-        }
-        
-        // Simulate form submission (replace with actual form handling)
-        showNotification('Thank you for your message! I\'ll get back to you soon.', 'success');
-        this.reset();
+// Enhanced Contact Form Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const subjectInput = document.getElementById('subject');
+    const messageInput = document.getElementById('message');
+    const formMessage = document.getElementById('formMessage');
+    
+    // Add input event listeners for real-time validation
+    nameInput.addEventListener('input', function() {
+        validateName();
     });
-}
+    
+    emailInput.addEventListener('input', function() {
+        validateEmail();
+    });
+    
+    subjectInput.addEventListener('input', function() {
+        validateSubject();
+    });
+    
+    messageInput.addEventListener('input', function() {
+        validateMessage();
+    });
+    
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        if (validateName() && validateEmail() && validateSubject() && validateMessage()) {
+            const res = await fetch("/api/send-email", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                name: nameInput.value,
+                email: emailInput.value,
+                subject: subjectInput.value,
+                message: messageInput.value,
+            }),
+            });
 
-// Email validation function
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
+            const data = await res.json();
+            if (res.ok) {
+            showMessage("Message sent successfully!", "success");
+            form.reset();
+            } else {
+            showMessage(`Error: ${data.error}`, "error");
+            }
+        } else {
+            showMessage("Please fix validation errors.", "error");
+        }
+    });
+
+
+    
+    function validateName() {
+        const nameError = document.getElementById('nameError');
+        if (nameInput.value.trim() === '') {
+            nameError.style.display = 'block';
+            return false;
+        } else {
+            nameError.style.display = 'none';
+            return true;
+        }
+    }
+    
+    function validateEmail() {
+        const emailError = document.getElementById('emailError');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        if (!emailRegex.test(emailInput.value)) {
+            emailError.style.display = 'block';
+            return false;
+        } else {
+            emailError.style.display = 'none';
+            return true;
+        }
+    }
+    
+    function validateSubject() {
+        const subjectError = document.getElementById('subjectError');
+        if (subjectInput.value.trim() === '') {
+            subjectError.style.display = 'block';
+            return false;
+        } else {
+            subjectError.style.display = 'none';
+            return true;
+        }
+    }
+    
+    function validateMessage() {
+        const messageError = document.getElementById('messageError');
+        if (messageInput.value.trim() === '') {
+            messageError.style.display = 'block';
+            return false;
+        } else {
+            messageError.style.display = 'none';
+            return true;
+        }
+    }
+    
+    function showMessage(text, type) {
+        formMessage.textContent = text;
+        formMessage.className = 'form-message ' + type;
+        formMessage.style.display = 'block';
+        
+        // Hide message after 5 seconds
+        setTimeout(function() {
+            formMessage.style.display = 'none';
+        }, 5000);
+    }
+});
 
 // Notification system
 function showNotification(message, type = 'info') {

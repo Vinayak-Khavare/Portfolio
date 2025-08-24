@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -44,9 +45,9 @@
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1 class="hero-title">
+                <h3 class="hero-title">
                     Hi, I'm <span class="highlight">Vinayak Khavare</span>!
-                </h1>
+                </h3>
                 <p class="hero-subtitle">AI/ML Developer & Creative Problem Solver</p>
                 <p class="hero-description">
                     I build beautiful, functional, and user-centered digital experiences. 
@@ -332,17 +333,31 @@
                 <form class="contact-form" id="contactForm">
                     <div class="form-group">
                         <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        <label for="name">Your Name</label>
+                        <div class="validation-error" id="nameError">Please enter your name</div>
                     </div>
+                    
                     <div class="form-group">
                         <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        <label for="email">Your Email</label>
+                        <div class="validation-error" id="emailError">Please enter a valid email address</div>
                     </div>
+                    
                     <div class="form-group">
                         <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        <label for="subject">Subject</label>
+                        <div class="validation-error" id="subjectError">Please enter a subject</div>
                     </div>
+                    
                     <div class="form-group">
                         <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                        <label for="message">Your Message</label>
+                        <div class="validation-error" id="messageError">Please enter your message</div>
                     </div>
+                    
                     <button type="submit" class="btn btn-primary">Send Message</button>
+                    
+                    <div class="form-message" id="formMessage"></div>
                 </form>
             </div>
         </div>
