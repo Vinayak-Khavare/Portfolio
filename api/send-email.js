@@ -16,7 +16,7 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         service_id: process.env.EMAILJS_SERVICE_ID,
         template_id: process.env.EMAILJS_TEMPLATE_ID,
-        user_id: process.env.EMAILJS_PUBLIC_KEY,
+        accessToken: process.env.EMAILJS_PRIVATE_KEY,
         template_params: {
           from_name: name,
           from_email: email,
@@ -26,10 +26,7 @@ export default async function handler(req, res) {
       }),
     });
 
-    if (!response.ok) {
-      const err = await response.text();
-      throw new Error(err || "Failed to send email");
-    }
+    if (!response.ok) throw new Error(await response.text());
 
     return res.status(200).json({ success: true, message: "Email sent!" });
   } catch (err) {
