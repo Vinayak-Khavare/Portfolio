@@ -105,31 +105,29 @@ document.addEventListener('DOMContentLoaded', function() {
         validateMessage();
     });
     
-    form.addEventListener("submit", async (e) => {
+    form.addEventListener("submit", function(e) {
         e.preventDefault();
         if (validateName() && validateEmail() && validateSubject() && validateMessage()) {
-            const res = await fetch("/api/send-email", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                name: nameInput.value,
-                email: emailInput.value,
+            
+            emailjs.init("RmfTGz1bOMcceZMJt");
+
+            emailjs.send("service_bal7fh7", "template_fdtgko4", {
+                from_name: nameInput.value,
+                from_email: emailInput.value,
                 subject: subjectInput.value,
                 message: messageInput.value,
-            }),
+            }).then(() => {
+                showMessage("Message sent successfully!", "success");
+                form.reset();
+            }, (error) => {
+                showMessage("Error: " + error.text, "error");
             });
 
-            const data = await res.json();
-            if (res.ok) {
-            showMessage("Message sent successfully!", "success");
-            form.reset();
-            } else {
-            showMessage(`Error: ${data.error}`, "error");
-            }
         } else {
             showMessage("Please fix validation errors.", "error");
         }
     });
+
 
 
     
